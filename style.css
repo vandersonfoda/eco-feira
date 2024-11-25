@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Remove margens e preenchimentos padrão dos elementos */
+}
+
+
+img {
+    width: 300px; /* Define a largura */
+    height: 200px; /* Define a altura */
+    object-fit: cover; /* Ajusta o conteúdo da imagem */
+}
+
+body {
+    font-family: Arial, sans-serif; /* Define a fonte usada no site */
+    padding: 20px; /* Espaçamento ao redor do conteúdo */
+    background-color: #000; /* Define o fundo preto */
+    color: #fff; /* Texto branco para contraste */
+    overflow-x: hidden; /* Evita rolagem horizontal desnecessária */
+}
+
+header {
+    text-align: center; /* Centraliza o cabeçalho */
+    margin-bottom: 20px; /* Adiciona espaço abaixo do cabeçalho */
+    animation: fadeInHeader 2s ease-in-out; /* Animação ao aparecer o cabeçalho */
+}
+
+h1 {
+    font-size: 24px; /* Tamanho da fonte do título principal */
+    color: #fff; /* Cor do título */
+}
+
+main {
+    display: flex;
+    flex-direction: column; /* Organiza os produtos em coluna */
+    gap: 20px; /* Espaçamento entre os produtos */
+}
+
+.product {
+    background-color: #222; /* Fundo cinza escuro para os cards de produto */
+    border-radius: 10px; /* Borda arredondada dos produtos */
+    padding: 15px; /* Espaçamento dentro do card */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Sombra leve */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Centraliza o conteúdo dos produtos */
+    animation: fadeInProduct 1.5s ease-in-out; /* Animação ao aparecer o card de produto */
+    color: #fff; /* Cor do texto nos produtos */
+}
+
+.product img {
+    width: 100%; /* Imagem ocupa 100% da largura do card */
+    max-width: 300px; /* Limita a largura máxima da imagem */
+    border-radius: 10px; /* Borda arredondada da imagem */
+}
+
+.product-info {
+    margin-top: 10px; /* Espaçamento entre a imagem e o texto */
+    color: #fff; /* Garante que o texto seja branco */
+}
+
+.product-info h2 {
+    font-size: 20px; /* Tamanho da fonte dos títulos dos produtos */
+    color: #fff; /* Cor dos títulos */
+}
+
+.product-info p {
+    color: #ddd; /* Cor mais clara para o texto descritivo */
+}
+
+.whatsapp-link {
+    display: inline-block;
+    margin-top: 10px; /* Espaçamento acima do link */
+    background-color: #25D366; /* Cor verde do botão WhatsApp */
+    color: white;
+    padding: 10px 15px; /* Tamanho do botão */
+    border-radius: 5px; /* Borda arredondada do botão */
+    text-decoration: none; /* Remove o sublinhado do link */
+}
+
+.whatsapp-link:hover {
+    background-color: #1ebc5c; /* Cor do botão ao passar o mouse */
+}
+
+.overlay {
+    position: fixed; /* Fixa o elemento de introdução na tela */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ocupa a largura total */
+    height: 100%; /* Ocupa a altura total */
+    background-color: rgba(0, 0, 0, 0.9); /* Fundo preto translúcido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100; /* Mantém o overlay acima de outros elementos */
+    animation: fadeOutOverlay 3s ease-in forwards; /* Animação de fade out */
+}
+
+#intro-text {
+    font-size: 38px; /* Tamanho da fonte da introdução */
+    color: #fff; /* Cor branca */
+    text-align: center; /* Centraliza o texto */
+    opacity: 1;
+    animation: fadeOutText 2s ease-in forwards 1s; /* Animação para desaparecer o texto após 1 segundo */
+}
+
+@keyframes fadeInHeader {
+    from { opacity: 0; transform: translateY(-30px); } /* Início da animação: invisível e deslocado para cima */
+    to { opacity: 1; transform: translateY(0); } /* Fim da animação: visível e sem deslocamento */
+}
+
+@keyframes fadeInProduct {
+    from { opacity: 0; transform: translateY(50px); } /* Início da animação dos produtos */
+    to { opacity: 1; transform: translateY(0); } /* Fim da animação */
+}
+
+@keyframes fadeOutOverlay {
+    from { opacity: 1; } /* Início da animação do overlay */
+    to { opacity: 0; display: none; } /* Fim da animação, o overlay desaparece */
+}
+
+@keyframes fadeOutText {
+    from { opacity: 1; } /* Texto visível no início */
+    to { opacity: 0; } /* Texto desaparece no final */
+}
